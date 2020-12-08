@@ -9,8 +9,11 @@
   },
   "dependencies": {
     "@aws-amplify/ui-vue": "^0.2.30",
+    "autoprefixer": "^9.8.6",
     "aws-amplify": "^3.3.11",
     "core-js": "^3.6.5",
+    "postcss": "^7.0.35",
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.0.1",
     "vue": "^2.6.11",
     "vue-class-component": "^7.2.3",
     "vue-property-decorator": "^8.4.2",
@@ -34,6 +37,7 @@
     "typescript": "~3.9.3",
     "uuid": "^8.3.1",
     "vue-cli-plugin-tailwind": "~2.0.1",
-    "vue-template-compiler": "^2.6.11"
+    "vue-template-compiler": "^2.6.11",
+    "vuex-class": "^0.3.2"
   }
 }
