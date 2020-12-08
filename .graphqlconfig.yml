@@ -1,0 +1,18 @@
+projects:
+  AmplifyPhotosAPI:
+    schemaPath: amplify/backend/api/AmplifyPhotosAPI/build/schema.graphql
+    includes:
+      - src/graphql/**/*.ts
+    excludes:
+      - ./amplify/**
+    extensions:
+      amplify:
+        codeGenTarget: typescript
+        generatedFileName: src/API.ts
+        docsFilePath: src/graphql
+        region: ap-northeast-1
+        apiId: null
+        maxDepth: 5
+extensions:
+  amplify:
+    version: 3
