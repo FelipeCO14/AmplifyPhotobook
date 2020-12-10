@@ -21,7 +21,7 @@ const routes: Array<RouteConfig> = [
   },
 
   {
-    path: '/album/:id',
+    path: '/albumDetail/:id',
     name: 'AlbumDetailPage',
     component: AlbumDetailPage,
   },

@@ -33,9 +33,7 @@
   import { mapActions } from 'vuex';
   import { Action } from 'vuex-class';
 
-  @Component({
-    components: {},
-  })
+  @Component
   export default class LoginComponent extends Vue {
     username = '';
     password = '';
