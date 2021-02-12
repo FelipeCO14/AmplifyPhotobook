@@ -2,375 +2,426 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const onCreateAlbum = /* GraphQL */ `
-  subscription OnCreateAlbum($owner: String!) {
-    onCreateAlbum(owner: $owner) {
+export const onCreateBlog = /* GraphQL */ `
+  subscription OnCreateBlog {
+    onCreateBlog {
       id
-      owner
-      ownerId
       name
-      createdAt
-      updatedAt
-      photos {
+      posts {
         items {
           id
-          createdAt
-          updatedAt
-          album {
+          title
+          blog {
             id
-            owner
-            ownerId
             name
-            createdAt
-            updatedAt
-            photos {
+            posts {
               nextToken
             }
+            createdAt
+            updatedAt
           }
-          fullsize {
-            region
-            bucket
-            key
+          comments {
+            items {
+              id
+              content
+              createdAt
+              updatedAt
+            }
+            nextToken
           }
-          thumbnail {
-            region
-            bucket
-            key
-          }
-          contentType
-          gps {
-            latitude
-            longitude
-            altitude
-          }
-          height
-          width
-          size
-          owner
+          createdAt
+          updatedAt
         }
         nextToken
       }
+      createdAt
+      updatedAt
     }
   }
 `;
-export const onUpdateAlbum = /* GraphQL */ `
-  subscription OnUpdateAlbum($owner: String!) {
-    onUpdateAlbum(owner: $owner) {
+export const onUpdateBlog = /* GraphQL */ `
+  subscription OnUpdateBlog {
+    onUpdateBlog {
       id
-      owner
-      ownerId
       name
-      createdAt
-      updatedAt
-      photos {
+      posts {
         items {
           id
-          createdAt
-          updatedAt
-          album {
+          title
+          blog {
             id
-            owner
-            ownerId
             name
-            createdAt
-            updatedAt
-            photos {
+            posts {
               nextToken
             }
+            createdAt
+            updatedAt
           }
-          fullsize {
-            region
-            bucket
-            key
+          comments {
+            items {
+              id
+              content
+              createdAt
+              updatedAt
+            }
+            nextToken
           }
-          thumbnail {
-            region
-            bucket
-            key
-          }
-          contentType
-          gps {
-            latitude
-            longitude
-            altitude
-          }
-          height
-          width
-          size
-          owner
+          createdAt
+          updatedAt
         }
         nextToken
       }
+      createdAt
+      updatedAt
     }
   }
 `;
-export const onDeleteAlbum = /* GraphQL */ `
-  subscription OnDeleteAlbum($owner: String!) {
-    onDeleteAlbum(owner: $owner) {
+export const onDeleteBlog = /* GraphQL */ `
+  subscription OnDeleteBlog {
+    onDeleteBlog {
       id
-      owner
-      ownerId
       name
-      createdAt
-      updatedAt
-      photos {
+      posts {
         items {
           id
-          createdAt
-          updatedAt
-          album {
+          title
+          blog {
             id
-            owner
-            ownerId
             name
-            createdAt
-            updatedAt
-            photos {
+            posts {
               nextToken
             }
+            createdAt
+            updatedAt
           }
-          fullsize {
-            region
-            bucket
-            key
+          comments {
+            items {
+              id
+              content
+              createdAt
+              updatedAt
+            }
+            nextToken
           }
-          thumbnail {
-            region
-            bucket
-            key
-          }
-          contentType
-          gps {
-            latitude
-            longitude
-            altitude
-          }
-          height
-          width
-          size
-          owner
+          createdAt
+          updatedAt
         }
         nextToken
       }
+      createdAt
+      updatedAt
     }
   }
 `;
-export const onCreatePhoto = /* GraphQL */ `
-  subscription OnCreatePhoto($owner: String) {
-    onCreatePhoto(owner: $owner) {
+export const onCreatePost = /* GraphQL */ `
+  subscription OnCreatePost {
+    onCreatePost {
       id
-      createdAt
-      updatedAt
-      album {
+      title
+      blog {
         id
-        owner
-        ownerId
         name
-        createdAt
-        updatedAt
-        photos {
+        posts {
           items {
             id
-            createdAt
-            updatedAt
-            album {
+            title
+            blog {
               id
-              owner
-              ownerId
               name
               createdAt
               updatedAt
             }
-            fullsize {
-              region
-              bucket
-              key
+            comments {
+              nextToken
             }
-            thumbnail {
-              region
-              bucket
-              key
-            }
-            contentType
-            gps {
-              latitude
-              longitude
-              altitude
-            }
-            height
-            width
-            size
-            owner
+            createdAt
+            updatedAt
           }
           nextToken
         }
-      }
-      fullsize {
-        region
-        bucket
-        key
-      }
-      thumbnail {
-        region
-        bucket
-        key
-      }
-      contentType
-      gps {
-        latitude
-        longitude
-        altitude
-      }
-      height
-      width
-      size
-      owner
-    }
-  }
-`;
-export const onUpdatePhoto = /* GraphQL */ `
-  subscription OnUpdatePhoto($owner: String) {
-    onUpdatePhoto(owner: $owner) {
-      id
-      createdAt
-      updatedAt
-      album {
-        id
-        owner
-        ownerId
-        name
         createdAt
         updatedAt
-        photos {
-          items {
+      }
+      comments {
+        items {
+          id
+          content
+          post {
             id
-            createdAt
-            updatedAt
-            album {
+            title
+            blog {
               id
-              owner
-              ownerId
               name
               createdAt
               updatedAt
             }
-            fullsize {
-              region
-              bucket
-              key
+            comments {
+              nextToken
             }
-            thumbnail {
-              region
-              bucket
-              key
-            }
-            contentType
-            gps {
-              latitude
-              longitude
-              altitude
-            }
-            height
-            width
-            size
-            owner
+            createdAt
+            updatedAt
           }
-          nextToken
+          createdAt
+          updatedAt
         }
+        nextToken
       }
-      fullsize {
-        region
-        bucket
-        key
-      }
-      thumbnail {
-        region
-        bucket
-        key
-      }
-      contentType
-      gps {
-        latitude
-        longitude
-        altitude
-      }
-      height
-      width
-      size
-      owner
+      createdAt
+      updatedAt
     }
   }
 `;
-export const onDeletePhoto = /* GraphQL */ `
-  subscription OnDeletePhoto($owner: String) {
-    onDeletePhoto(owner: $owner) {
+export const onUpdatePost = /* GraphQL */ `
+  subscription OnUpdatePost {
+    onUpdatePost {
       id
-      createdAt
-      updatedAt
-      album {
+      title
+      blog {
         id
-        owner
-        ownerId
         name
-        createdAt
-        updatedAt
-        photos {
+        posts {
           items {
             id
-            createdAt
-            updatedAt
-            album {
+            title
+            blog {
               id
-              owner
-              ownerId
               name
               createdAt
               updatedAt
             }
-            fullsize {
-              region
-              bucket
-              key
+            comments {
+              nextToken
             }
-            thumbnail {
-              region
-              bucket
-              key
-            }
-            contentType
-            gps {
-              latitude
-              longitude
-              altitude
-            }
-            height
-            width
-            size
-            owner
+            createdAt
+            updatedAt
           }
           nextToken
         }
+        createdAt
+        updatedAt
       }
-      fullsize {
-        region
-        bucket
-        key
+      comments {
+        items {
+          id
+          content
+          post {
+            id
+            title
+            blog {
+              id
+              name
+              createdAt
+              updatedAt
+            }
+            comments {
+              nextToken
+            }
+            createdAt
+            updatedAt
+          }
+          createdAt
+          updatedAt
+        }
+        nextToken
       }
-      thumbnail {
-        region
-        bucket
-        key
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onDeletePost = /* GraphQL */ `
+  subscription OnDeletePost {
+    onDeletePost {
+      id
+      title
+      blog {
+        id
+        name
+        posts {
+          items {
+            id
+            title
+            blog {
+              id
+              name
+              createdAt
+              updatedAt
+            }
+            comments {
+              nextToken
+            }
+            createdAt
+            updatedAt
+          }
+          nextToken
+        }
+        createdAt
+        updatedAt
       }
-      contentType
-      gps {
-        latitude
-        longitude
-        altitude
+      comments {
+        items {
+          id
+          content
+          post {
+            id
+            title
+            blog {
+              id
+              name
+              createdAt
+              updatedAt
+            }
+            comments {
+              nextToken
+            }
+            createdAt
+            updatedAt
+          }
+          createdAt
+          updatedAt
+        }
+        nextToken
       }
-      height
-      width
-      size
-      owner
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onCreateComment = /* GraphQL */ `
+  subscription OnCreateComment {
+    onCreateComment {
+      id
+      content
+      post {
+        id
+        title
+        blog {
+          id
+          name
+          posts {
+            items {
+              id
+              title
+              createdAt
+              updatedAt
+            }
+            nextToken
+          }
+          createdAt
+          updatedAt
+        }
+        comments {
+          items {
+            id
+            content
+            post {
+              id
+              title
+              createdAt
+              updatedAt
+            }
+            createdAt
+            updatedAt
+          }
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onUpdateComment = /* GraphQL */ `
+  subscription OnUpdateComment {
+    onUpdateComment {
+      id
+      content
+      post {
+        id
+        title
+        blog {
+          id
+          name
+          posts {
+            items {
+              id
+              title
+              createdAt
+              updatedAt
+            }
+            nextToken
+          }
+          createdAt
+          updatedAt
+        }
+        comments {
+          items {
+            id
+            content
+            post {
+              id
+              title
+              createdAt
+              updatedAt
+            }
+            createdAt
+            updatedAt
+          }
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onDeleteComment = /* GraphQL */ `
+  subscription OnDeleteComment {
+    onDeleteComment {
+      id
+      content
+      post {
+        id
+        title
+        blog {
+          id
+          name
+          posts {
+            items {
+              id
+              title
+              createdAt
+              updatedAt
+            }
+            nextToken
+          }
+          createdAt
+          updatedAt
+        }
+        comments {
+          items {
+            id
+            content
+            post {
+              id
+              title
+              createdAt
+              updatedAt
+            }
+            createdAt
+            updatedAt
+          }
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
     }
   }
 `;

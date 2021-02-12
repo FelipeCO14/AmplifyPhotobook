@@ -2,23 +2,16 @@
 /* eslint-disable */
 //  This file was automatically generated and should not be edited.
 
-export type CreateAlbumInput = {
+export type CreateBlogInput = {
   id?: string | null,
-  owner: string,
-  ownerId: string,
   name: string,
-  createdAt?: string | null,
-  updatedAt?: string | null,
 };
 
-export type ModelAlbumConditionInput = {
-  ownerId?: ModelStringInput | null,
+export type ModelBlogConditionInput = {
   name?: ModelStringInput | null,
-  createdAt?: ModelStringInput | null,
-  updatedAt?: ModelStringInput | null,
-  and?: Array< ModelAlbumConditionInput | null > | null,
-  or?: Array< ModelAlbumConditionInput | null > | null,
-  not?: ModelAlbumConditionInput | null,
+  and?: Array< ModelBlogConditionInput | null > | null,
+  or?: Array< ModelBlogConditionInput | null > | null,
+  not?: ModelBlogConditionInput | null,
 };
 
 export type ModelStringInput = {
@@ -61,97 +54,67 @@ export type ModelSizeInput = {
   between?: Array< number | null > | null,
 };
 
-export type UpdateAlbumInput = {
+export type UpdateBlogInput = {
   id: string,
-  owner?: string | null,
-  ownerId?: string | null,
   name?: string | null,
-  createdAt?: string | null,
-  updatedAt?: string | null,
 };
 
-export type DeleteAlbumInput = {
+export type DeleteBlogInput = {
   id?: string | null,
 };
 
-export type CreatePhotoInput = {
+export type CreatePostInput = {
   id?: string | null,
-  createdAt?: string | null,
-  updatedAt?: string | null,
-  fullsize: S3ObjectInput,
-  thumbnail?: S3ObjectInput | null,
-  contentType?: string | null,
-  gps?: GPSInput | null,
-  height?: number | null,
-  width?: number | null,
-  size?: number | null,
-  photoAlbumId?: string | null,
+  title: string,
+  postBlogId?: string | null,
 };
 
-export type S3ObjectInput = {
-  region: string,
-  bucket: string,
-  key: string,
+export type ModelPostConditionInput = {
+  title?: ModelStringInput | null,
+  and?: Array< ModelPostConditionInput | null > | null,
+  or?: Array< ModelPostConditionInput | null > | null,
+  not?: ModelPostConditionInput | null,
 };
 
-export type GPSInput = {
-  latitude: string,
-  longitude: string,
-  altitude: number,
-};
-
-export type ModelPhotoConditionInput = {
-  createdAt?: ModelStringInput | null,
-  updatedAt?: ModelStringInput | null,
-  contentType?: ModelStringInput | null,
-  height?: ModelIntInput | null,
-  width?: ModelIntInput | null,
-  size?: ModelIntInput | null,
-  and?: Array< ModelPhotoConditionInput | null > | null,
-  or?: Array< ModelPhotoConditionInput | null > | null,
-  not?: ModelPhotoConditionInput | null,
-};
-
-export type ModelIntInput = {
-  ne?: number | null,
-  eq?: number | null,
-  le?: number | null,
-  lt?: number | null,
-  ge?: number | null,
-  gt?: number | null,
-  between?: Array< number | null > | null,
-  attributeExists?: boolean | null,
-  attributeType?: ModelAttributeTypes | null,
-};
-
-export type DeletePhotoInput = {
-  id?: string | null,
-};
-
-export type UpdatePhotoInput = {
+export type UpdatePostInput = {
   id: string,
-  createdAt?: string | null,
-  updatedAt?: string | null,
-  fullsize?: S3ObjectInput | null,
-  thumbnail?: S3ObjectInput | null,
-  contentType?: string | null,
-  gps?: GPSInput | null,
-  height?: number | null,
-  width?: number | null,
-  size?: number | null,
-  photoAlbumId?: string | null,
+  title?: string | null,
+  postBlogId?: string | null,
 };
 
-export type ModelAlbumFilterInput = {
+export type DeletePostInput = {
+  id?: string | null,
+};
+
+export type CreateCommentInput = {
+  id?: string | null,
+  content?: string | null,
+  commentPostId?: string | null,
+};
+
+export type ModelCommentConditionInput = {
+  content?: ModelStringInput | null,
+  and?: Array< ModelCommentConditionInput | null > | null,
+  or?: Array< ModelCommentConditionInput | null > | null,
+  not?: ModelCommentConditionInput | null,
+};
+
+export type UpdateCommentInput = {
+  id: string,
+  content?: string | null,
+  commentPostId?: string | null,
+};
+
+export type DeleteCommentInput = {
+  id?: string | null,
+};
+
+export type ModelBlogFilterInput = {
   id?: ModelIDInput | null,
-  owner?: ModelIDInput | null,
-  ownerId?: ModelStringInput | null,
   name?: ModelStringInput | null,
-  createdAt?: ModelStringInput | null,
-  updatedAt?: ModelStringInput | null,
-  and?: Array< ModelAlbumFilterInput | null > | null,
-  or?: Array< ModelAlbumFilterInput | null > | null,
-  not?: ModelAlbumFilterInput | null,
+  and?: Array< ModelBlogFilterInput | null > | null,
+  or?: Array< ModelBlogFilterInput | null > | null,
+  not?: ModelBlogFilterInput | null,
 };
 
 export type ModelIDInput = {
@@ -170,1194 +133,1370 @@ export type ModelIDInput = {
   size?: ModelSizeInput | null,
 };
 
-export type ModelPhotoFilterInput = {
+export type ModelPostFilterInput = {
   id?: ModelIDInput | null,
-  createdAt?: ModelStringInput | null,
-  updatedAt?: ModelStringInput | null,
-  contentType?: ModelStringInput | null,
-  height?: ModelIntInput | null,
-  width?: ModelIntInput | null,
-  size?: ModelIntInput | null,
-  and?: Array< ModelPhotoFilterInput | null > | null,
-  or?: Array< ModelPhotoFilterInput | null > | null,
-  not?: ModelPhotoFilterInput | null,
+  title?: ModelStringInput | null,
+  and?: Array< ModelPostFilterInput | null > | null,
+  or?: Array< ModelPostFilterInput | null > | null,
+  not?: ModelPostFilterInput | null,
 };
 
-export type CreateAlbumMutationVariables = {
-  input: CreateAlbumInput,
-  condition?: ModelAlbumConditionInput | null,
+export type ModelCommentFilterInput = {
+  id?: ModelIDInput | null,
+  content?: ModelStringInput | null,
+  and?: Array< ModelCommentFilterInput | null > | null,
+  or?: Array< ModelCommentFilterInput | null > | null,
+  not?: ModelCommentFilterInput | null,
 };
 
-export type CreateAlbumMutation = {
-  createAlbum:  {
-    __typename: "Album",
+export type CreateBlogMutationVariables = {
+  input: CreateBlogInput,
+  condition?: ModelBlogConditionInput | null,
+};
+
+export type CreateBlogMutation = {
+  createBlog:  {
+    __typename: "Blog",
     id: string,
-    owner: string,
-    ownerId: string,
     name: string,
-    createdAt: string | null,
-    updatedAt: string | null,
-    photos:  {
-      __typename: "ModelPhotoConnection",
+    posts:  {
+      __typename: "ModelPostConnection",
       items:  Array< {
-        __typename: "Photo",
+        __typename: "Post",
         id: string,
-        createdAt: string | null,
-        updatedAt: string | null,
-        album:  {
-          __typename: "Album",
+        title: string,
+        blog:  {
+          __typename: "Blog",
           id: string,
-          owner: string,
-          ownerId: string,
           name: string,
-          createdAt: string | null,
-          updatedAt: string | null,
-          photos:  {
-            __typename: "ModelPhotoConnection",
+          posts:  {
+            __typename: "ModelPostConnection",
             nextToken: string | null,
           } | null,
+          createdAt: string,
+          updatedAt: string,
         } | null,
-        fullsize:  {
-          __typename: "S3Object",
-          region: string,
-          bucket: string,
-          key: string,
-        },
-        thumbnail:  {
-          __typename: "S3Object",
-          region: string,
-          bucket: string,
-          key: string,
-        } | null,
-        contentType: string | null,
-        gps:  {
-          __typename: "GPS",
-          latitude: string,
-          longitude: string,
-          altitude: number,
-        } | null,
-        height: number | null,
-        width: number | null,
-        size: number | null,
-        owner: string | null,
-      } | null > | null,
-      nextToken: string | null,
-    } | null,
-  } | null,
-};
-
-export type UpdateAlbumMutationVariables = {
-  input: UpdateAlbumInput,
-  condition?: ModelAlbumConditionInput | null,
-};
-
-export type UpdateAlbumMutation = {
-  updateAlbum:  {
-    __typename: "Album",
-    id: string,
-    owner: string,
-    ownerId: string,
-    name: string,
-    createdAt: string | null,
-    updatedAt: string | null,
-    photos:  {
-      __typename: "ModelPhotoConnection",
-      items:  Array< {
-        __typename: "Photo",
-        id: string,
-        createdAt: string | null,
-        updatedAt: string | null,
-        album:  {
-          __typename: "Album",
-          id: string,
-          owner: string,
-          ownerId: string,
-          name: string,
-          createdAt: string | null,
-          updatedAt: string | null,
-          photos:  {
-            __typename: "ModelPhotoConnection",
-            nextToken: string | null,
-          } | null,
-        } | null,
-        fullsize:  {
-          __typename: "S3Object",
-          region: string,
-          bucket: string,
-          key: string,
-        },
-        thumbnail:  {
-          __typename: "S3Object",
-          region: string,
-          bucket: string,
-          key: string,
-        } | null,
-        contentType: string | null,
-        gps:  {
-          __typename: "GPS",
-          latitude: string,
-          longitude: string,
-          altitude: number,
-        } | null,
-        height: number | null,
-        width: number | null,
-        size: number | null,
-        owner: string | null,
-      } | null > | null,
-      nextToken: string | null,
-    } | null,
-  } | null,
-};
-
-export type DeleteAlbumMutationVariables = {
-  input: DeleteAlbumInput,
-  condition?: ModelAlbumConditionInput | null,
-};
-
-export type DeleteAlbumMutation = {
-  deleteAlbum:  {
-    __typename: "Album",
-    id: string,
-    owner: string,
-    ownerId: string,
-    name: string,
-    createdAt: string | null,
-    updatedAt: string | null,
-    photos:  {
-      __typename: "ModelPhotoConnection",
-      items:  Array< {
-        __typename: "Photo",
-        id: string,
-        createdAt: string | null,
-        updatedAt: string | null,
-        album:  {
-          __typename: "Album",
-          id: string,
-          owner: string,
-          ownerId: string,
-          name: string,
-          createdAt: string | null,
-          updatedAt: string | null,
-          photos:  {
-            __typename: "ModelPhotoConnection",
-            nextToken: string | null,
-          } | null,
-        } | null,
-        fullsize:  {
-          __typename: "S3Object",
-          region: string,
-          bucket: string,
-          key: string,
-        },
-        thumbnail:  {
-          __typename: "S3Object",
-          region: string,
-          bucket: string,
-          key: string,
-        } | null,
-        contentType: string | null,
-        gps:  {
-          __typename: "GPS",
-          latitude: string,
-          longitude: string,
-          altitude: number,
-        } | null,
-        height: number | null,
-        width: number | null,
-        size: number | null,
-        owner: string | null,
-      } | null > | null,
-      nextToken: string | null,
-    } | null,
-  } | null,
-};
-
-export type CreatePhotoMutationVariables = {
-  input: CreatePhotoInput,
-  condition?: ModelPhotoConditionInput | null,
-};
-
-export type CreatePhotoMutation = {
-  createPhoto:  {
-    __typename: "Photo",
-    id: string,
-    createdAt: string | null,
-    updatedAt: string | null,
-    album:  {
-      __typename: "Album",
-      id: string,
-      owner: string,
-      ownerId: string,
-      name: string,
-      createdAt: string | null,
-      updatedAt: string | null,
-      photos:  {
-        __typename: "ModelPhotoConnection",
-        items:  Array< {
-          __typename: "Photo",
-          id: string,
-          createdAt: string | null,
-          updatedAt: string | null,
-          album:  {
-            __typename: "Album",
-            id: string,
-            owner: string,
-            ownerId: string,
-            name: string,
-            createdAt: string | null,
-            updatedAt: string | null,
-          } | null,
-          fullsize:  {
-            __typename: "S3Object",
-            region: string,
-            bucket: string,
-            key: string,
-          },
-          thumbnail:  {
-            __typename: "S3Object",
-            region: string,
-            bucket: string,
-            key: string,
-          } | null,
-          contentType: string | null,
-          gps:  {
-            __typename: "GPS",
-            latitude: string,
-            longitude: string,
-            altitude: number,
-          } | null,
-          height: number | null,
-          width: number | null,
-          size: number | null,
-          owner: string | null,
-        } | null > | null,
-        nextToken: string | null,
-      } | null,
-    } | null,
-    fullsize:  {
-      __typename: "S3Object",
-      region: string,
-      bucket: string,
-      key: string,
-    },
-    thumbnail:  {
-      __typename: "S3Object",
-      region: string,
-      bucket: string,
-      key: string,
-    } | null,
-    contentType: string | null,
-    gps:  {
-      __typename: "GPS",
-      latitude: string,
-      longitude: string,
-      altitude: number,
-    } | null,
-    height: number | null,
-    width: number | null,
-    size: number | null,
-    owner: string | null,
-  } | null,
-};
-
-export type DeletePhotoMutationVariables = {
-  input: DeletePhotoInput,
-  condition?: ModelPhotoConditionInput | null,
-};
-
-export type DeletePhotoMutation = {
-  deletePhoto:  {
-    __typename: "Photo",
-    id: string,
-    createdAt: string | null,
-    updatedAt: string | null,
-    album:  {
-      __typename: "Album",
-      id: string,
-      owner: string,
-      ownerId: string,
-      name: string,
-      createdAt: string | null,
-      updatedAt: string | null,
-      photos:  {
-        __typename: "ModelPhotoConnection",
-        items:  Array< {
-          __typename: "Photo",
-          id: string,
-          createdAt: string | null,
-          updatedAt: string | null,
-          album:  {
-            __typename: "Album",
-            id: string,
-            owner: string,
-            ownerId: string,
-            name: string,
-            createdAt: string | null,
-            updatedAt: string | null,
-          } | null,
-          fullsize:  {
-            __typename: "S3Object",
-            region: string,
-            bucket: string,
-            key: string,
-          },
-          thumbnail:  {
-            __typename: "S3Object",
-            region: string,
-            bucket: string,
-            key: string,
-          } | null,
-          contentType: string | null,
-          gps:  {
-            __typename: "GPS",
-            latitude: string,
-            longitude: string,
-            altitude: number,
-          } | null,
-          height: number | null,
-          width: number | null,
-          size: number | null,
-          owner: string | null,
-        } | null > | null,
-        nextToken: string | null,
-      } | null,
-    } | null,
-    fullsize:  {
-      __typename: "S3Object",
-      region: string,
-      bucket: string,
-      key: string,
-    },
-    thumbnail:  {
-      __typename: "S3Object",
-      region: string,
-      bucket: string,
-      key: string,
-    } | null,
-    contentType: string | null,
-    gps:  {
-      __typename: "GPS",
-      latitude: string,
-      longitude: string,
-      altitude: number,
-    } | null,
-    height: number | null,
-    width: number | null,
-    size: number | null,
-    owner: string | null,
-  } | null,
-};
-
-export type UpdatePhotoMutationVariables = {
-  input: UpdatePhotoInput,
-  condition?: ModelPhotoConditionInput | null,
-};
-
-export type UpdatePhotoMutation = {
-  updatePhoto:  {
-    __typename: "Photo",
-    id: string,
-    createdAt: string | null,
-    updatedAt: string | null,
-    album:  {
-      __typename: "Album",
-      id: string,
-      owner: string,
-      ownerId: string,
-      name: string,
-      createdAt: string | null,
-      updatedAt: string | null,
-      photos:  {
-        __typename: "ModelPhotoConnection",
-        items:  Array< {
-          __typename: "Photo",
-          id: string,
-          createdAt: string | null,
-          updatedAt: string | null,
-          album:  {
-            __typename: "Album",
-            id: string,
-            owner: string,
-            ownerId: string,
-            name: string,
-            createdAt: string | null,
-            updatedAt: string | null,
-          } | null,
-          fullsize:  {
-            __typename: "S3Object",
-            region: string,
-            bucket: string,
-            key: string,
-          },
-          thumbnail:  {
-            __typename: "S3Object",
-            region: string,
-            bucket: string,
-            key: string,
-          } | null,
-          contentType: string | null,
-          gps:  {
-            __typename: "GPS",
-            latitude: string,
-            longitude: string,
-            altitude: number,
-          } | null,
-          height: number | null,
-          width: number | null,
-          size: number | null,
-          owner: string | null,
-        } | null > | null,
-        nextToken: string | null,
-      } | null,
-    } | null,
-    fullsize:  {
-      __typename: "S3Object",
-      region: string,
-      bucket: string,
-      key: string,
-    },
-    thumbnail:  {
-      __typename: "S3Object",
-      region: string,
-      bucket: string,
-      key: string,
-    } | null,
-    contentType: string | null,
-    gps:  {
-      __typename: "GPS",
-      latitude: string,
-      longitude: string,
-      altitude: number,
-    } | null,
-    height: number | null,
-    width: number | null,
-    size: number | null,
-    owner: string | null,
-  } | null,
-};
-
-export type GetAlbumQueryVariables = {
-  id: string,
-};
-
-export type GetAlbumQuery = {
-  getAlbum:  {
-    __typename: "Album",
-    id: string,
-    owner: string,
-    ownerId: string,
-    name: string,
-    createdAt: string | null,
-    updatedAt: string | null,
-    photos:  {
-      __typename: "ModelPhotoConnection",
-      items:  Array< {
-        __typename: "Photo",
-        id: string,
-        createdAt: string | null,
-        updatedAt: string | null,
-        album:  {
-          __typename: "Album",
-          id: string,
-          owner: string,
-          ownerId: string,
-          name: string,
-          createdAt: string | null,
-          updatedAt: string | null,
-          photos:  {
-            __typename: "ModelPhotoConnection",
-            nextToken: string | null,
-          } | null,
-        } | null,
-        fullsize:  {
-          __typename: "S3Object",
-          region: string,
-          bucket: string,
-          key: string,
-        },
-        thumbnail:  {
-          __typename: "S3Object",
-          region: string,
-          bucket: string,
-          key: string,
-        } | null,
-        contentType: string | null,
-        gps:  {
-          __typename: "GPS",
-          latitude: string,
-          longitude: string,
-          altitude: number,
-        } | null,
-        height: number | null,
-        width: number | null,
-        size: number | null,
-        owner: string | null,
-      } | null > | null,
-      nextToken: string | null,
-    } | null,
-  } | null,
-};
-
-export type ListAlbumsQueryVariables = {
-  filter?: ModelAlbumFilterInput | null,
-  limit?: number | null,
-  nextToken?: string | null,
-};
-
-export type ListAlbumsQuery = {
-  listAlbums:  {
-    __typename: "ModelAlbumConnection",
-    items:  Array< {
-      __typename: "Album",
-      id: string,
-      owner: string,
-      ownerId: string,
-      name: string,
-      createdAt: string | null,
-      updatedAt: string | null,
-      photos:  {
-        __typename: "ModelPhotoConnection",
-        items:  Array< {
-          __typename: "Photo",
-          id: string,
-          createdAt: string | null,
-          updatedAt: string | null,
-          album:  {
-            __typename: "Album",
-            id: string,
-            owner: string,
-            ownerId: string,
-            name: string,
-            createdAt: string | null,
-            updatedAt: string | null,
-          } | null,
-          fullsize:  {
-            __typename: "S3Object",
-            region: string,
-            bucket: string,
-            key: string,
-          },
-          thumbnail:  {
-            __typename: "S3Object",
-            region: string,
-            bucket: string,
-            key: string,
-          } | null,
-          contentType: string | null,
-          gps:  {
-            __typename: "GPS",
-            latitude: string,
-            longitude: string,
-            altitude: number,
-          } | null,
-          height: number | null,
-          width: number | null,
-          size: number | null,
-          owner: string | null,
-        } | null > | null,
-        nextToken: string | null,
-      } | null,
-    } | null > | null,
-    nextToken: string | null,
-  } | null,
-};
-
-export type GetPhotoQueryVariables = {
-  id: string,
-};
-
-export type GetPhotoQuery = {
-  getPhoto:  {
-    __typename: "Photo",
-    id: string,
-    createdAt: string | null,
-    updatedAt: string | null,
-    album:  {
-      __typename: "Album",
-      id: string,
-      owner: string,
-      ownerId: string,
-      name: string,
-      createdAt: string | null,
-      updatedAt: string | null,
-      photos:  {
-        __typename: "ModelPhotoConnection",
-        items:  Array< {
-          __typename: "Photo",
-          id: string,
-          createdAt: string | null,
-          updatedAt: string | null,
-          album:  {
-            __typename: "Album",
-            id: string,
-            owner: string,
-            ownerId: string,
-            name: string,
-            createdAt: string | null,
-            updatedAt: string | null,
-          } | null,
-          fullsize:  {
-            __typename: "S3Object",
-            region: string,
-            bucket: string,
-            key: string,
-          },
-          thumbnail:  {
-            __typename: "S3Object",
-            region: string,
-            bucket: string,
-            key: string,
-          } | null,
-          contentType: string | null,
-          gps:  {
-            __typename: "GPS",
-            latitude: string,
-            longitude: string,
-            altitude: number,
-          } | null,
-          height: number | null,
-          width: number | null,
-          size: number | null,
-          owner: string | null,
-        } | null > | null,
-        nextToken: string | null,
-      } | null,
-    } | null,
-    fullsize:  {
-      __typename: "S3Object",
-      region: string,
-      bucket: string,
-      key: string,
-    },
-    thumbnail:  {
-      __typename: "S3Object",
-      region: string,
-      bucket: string,
-      key: string,
-    } | null,
-    contentType: string | null,
-    gps:  {
-      __typename: "GPS",
-      latitude: string,
-      longitude: string,
-      altitude: number,
-    } | null,
-    height: number | null,
-    width: number | null,
-    size: number | null,
-    owner: string | null,
-  } | null,
-};
-
-export type ListPhotosQueryVariables = {
-  filter?: ModelPhotoFilterInput | null,
-  limit?: number | null,
-  nextToken?: string | null,
-};
-
-export type ListPhotosQuery = {
-  listPhotos:  {
-    __typename: "ModelPhotoConnection",
-    items:  Array< {
-      __typename: "Photo",
-      id: string,
-      createdAt: string | null,
-      updatedAt: string | null,
-      album:  {
-        __typename: "Album",
-        id: string,
-        owner: string,
-        ownerId: string,
-        name: string,
-        createdAt: string | null,
-        updatedAt: string | null,
-        photos:  {
-          __typename: "ModelPhotoConnection",
+        comments:  {
+          __typename: "ModelCommentConnection",
           items:  Array< {
-            __typename: "Photo",
+            __typename: "Comment",
             id: string,
-            createdAt: string | null,
-            updatedAt: string | null,
-            contentType: string | null,
-            height: number | null,
-            width: number | null,
-            size: number | null,
-            owner: string | null,
+            content: string | null,
+            createdAt: string,
+            updatedAt: string,
           } | null > | null,
           nextToken: string | null,
         } | null,
+        createdAt: string,
+        updatedAt: string,
+      } | null > | null,
+      nextToken: string | null,
+    } | null,
+    createdAt: string,
+    updatedAt: string,
+  } | null,
+};
+
+export type UpdateBlogMutationVariables = {
+  input: UpdateBlogInput,
+  condition?: ModelBlogConditionInput | null,
+};
+
+export type UpdateBlogMutation = {
+  updateBlog:  {
+    __typename: "Blog",
+    id: string,
+    name: string,
+    posts:  {
+      __typename: "ModelPostConnection",
+      items:  Array< {
+        __typename: "Post",
+        id: string,
+        title: string,
+        blog:  {
+          __typename: "Blog",
+          id: string,
+          name: string,
+          posts:  {
+            __typename: "ModelPostConnection",
+            nextToken: string | null,
+          } | null,
+          createdAt: string,
+          updatedAt: string,
+        } | null,
+        comments:  {
+          __typename: "ModelCommentConnection",
+          items:  Array< {
+            __typename: "Comment",
+            id: string,
+            content: string | null,
+            createdAt: string,
+            updatedAt: string,
+          } | null > | null,
+          nextToken: string | null,
+        } | null,
+        createdAt: string,
+        updatedAt: string,
+      } | null > | null,
+      nextToken: string | null,
+    } | null,
+    createdAt: string,
+    updatedAt: string,
+  } | null,
+};
+
+export type DeleteBlogMutationVariables = {
+  input: DeleteBlogInput,
+  condition?: ModelBlogConditionInput | null,
+};
+
+export type DeleteBlogMutation = {
+  deleteBlog:  {
+    __typename: "Blog",
+    id: string,
+    name: string,
+    posts:  {
+      __typename: "ModelPostConnection",
+      items:  Array< {
+        __typename: "Post",
+        id: string,
+        title: string,
+        blog:  {
+          __typename: "Blog",
+          id: string,
+          name: string,
+          posts:  {
+            __typename: "ModelPostConnection",
+            nextToken: string | null,
+          } | null,
+          createdAt: string,
+          updatedAt: string,
+        } | null,
+        comments:  {
+          __typename: "ModelCommentConnection",
+          items:  Array< {
+            __typename: "Comment",
+            id: string,
+            content: string | null,
+            createdAt: string,
+            updatedAt: string,
+          } | null > | null,
+          nextToken: string | null,
+        } | null,
+        createdAt: string,
+        updatedAt: string,
+      } | null > | null,
+      nextToken: string | null,
+    } | null,
+    createdAt: string,
+    updatedAt: string,
+  } | null,
+};
+
+export type CreatePostMutationVariables = {
+  input: CreatePostInput,
+  condition?: ModelPostConditionInput | null,
+};
+
+export type CreatePostMutation = {
+  createPost:  {
+    __typename: "Post",
+    id: string,
+    title: string,
+    blog:  {
+      __typename: "Blog",
+      id: string,
+      name: string,
+      posts:  {
+        __typename: "ModelPostConnection",
+        items:  Array< {
+          __typename: "Post",
+          id: string,
+          title: string,
+          blog:  {
+            __typename: "Blog",
+            id: string,
+            name: string,
+            createdAt: string,
+            updatedAt: string,
+          } | null,
+          comments:  {
+            __typename: "ModelCommentConnection",
+            nextToken: string | null,
+          } | null,
+          createdAt: string,
+          updatedAt: string,
+        } | null > | null,
+        nextToken: string | null,
       } | null,
-      fullsize:  {
-        __typename: "S3Object",
-        region: string,
-        bucket: string,
-        key: string,
-      },
-      thumbnail:  {
-        __typename: "S3Object",
-        region: string,
-        bucket: string,
-        key: string,
+      createdAt: string,
+      updatedAt: string,
+    } | null,
+    comments:  {
+      __typename: "ModelCommentConnection",
+      items:  Array< {
+        __typename: "Comment",
+        id: string,
+        content: string | null,
+        post:  {
+          __typename: "Post",
+          id: string,
+          title: string,
+          blog:  {
+            __typename: "Blog",
+            id: string,
+            name: string,
+            createdAt: string,
+            updatedAt: string,
+          } | null,
+          comments:  {
+            __typename: "ModelCommentConnection",
+            nextToken: string | null,
+          } | null,
+          createdAt: string,
+          updatedAt: string,
+        } | null,
+        createdAt: string,
+        updatedAt: string,
+      } | null > | null,
+      nextToken: string | null,
+    } | null,
+    createdAt: string,
+    updatedAt: string,
+  } | null,
+};
+
+export type UpdatePostMutationVariables = {
+  input: UpdatePostInput,
+  condition?: ModelPostConditionInput | null,
+};
+
+export type UpdatePostMutation = {
+  updatePost:  {
+    __typename: "Post",
+    id: string,
+    title: string,
+    blog:  {
+      __typename: "Blog",
+      id: string,
+      name: string,
+      posts:  {
+        __typename: "ModelPostConnection",
+        items:  Array< {
+          __typename: "Post",
+          id: string,
+          title: string,
+          blog:  {
+            __typename: "Blog",
+            id: string,
+            name: string,
+            createdAt: string,
+            updatedAt: string,
+          } | null,
+          comments:  {
+            __typename: "ModelCommentConnection",
+            nextToken: string | null,
+          } | null,
+          createdAt: string,
+          updatedAt: string,
+        } | null > | null,
+        nextToken: string | null,
       } | null,
-      contentType: string | null,
-      gps:  {
-        __typename: "GPS",
-        latitude: string,
-        longitude: string,
-        altitude: number,
+      createdAt: string,
+      updatedAt: string,
+    } | null,
+    comments:  {
+      __typename: "ModelCommentConnection",
+      items:  Array< {
+        __typename: "Comment",
+        id: string,
+        content: string | null,
+        post:  {
+          __typename: "Post",
+          id: string,
+          title: string,
+          blog:  {
+            __typename: "Blog",
+            id: string,
+            name: string,
+            createdAt: string,
+            updatedAt: string,
+          } | null,
+          comments:  {
+            __typename: "ModelCommentConnection",
+            nextToken: string | null,
+          } | null,
+          createdAt: string,
+          updatedAt: string,
+        } | null,
+        createdAt: string,
+        updatedAt: string,
+      } | null > | null,
+      nextToken: string | null,
+    } | null,
+    createdAt: string,
+    updatedAt: string,
+  } | null,
+};
+
+export type DeletePostMutationVariables = {
+  input: DeletePostInput,
+  condition?: ModelPostConditionInput | null,
+};
+
+export type DeletePostMutation = {
+  deletePost:  {
+    __typename: "Post",
+    id: string,
+    title: string,
+    blog:  {
+      __typename: "Blog",
+      id: string,
+      name: string,
+      posts:  {
+        __typename: "ModelPostConnection",
+        items:  Array< {
+          __typename: "Post",
+          id: string,
+          title: string,
+          blog:  {
+            __typename: "Blog",
+            id: string,
+            name: string,
+            createdAt: string,
+            updatedAt: string,
+          } | null,
+          comments:  {
+            __typename: "ModelCommentConnection",
+            nextToken: string | null,
+          } | null,
+          createdAt: string,
+          updatedAt: string,
+        } | null > | null,
+        nextToken: string | null,
       } | null,
-      height: number | null,
-      width: number | null,
-      size: number | null,
-      owner: string | null,
+      createdAt: string,
+      updatedAt: string,
+    } | null,
+    comments:  {
+      __typename: "ModelCommentConnection",
+      items:  Array< {
+        __typename: "Comment",
+        id: string,
+        content: string | null,
+        post:  {
+          __typename: "Post",
+          id: string,
+          title: string,
+          blog:  {
+            __typename: "Blog",
+            id: string,
+            name: string,
+            createdAt: string,
+            updatedAt: string,
+          } | null,
+          comments:  {
+            __typename: "ModelCommentConnection",
+            nextToken: string | null,
+          } | null,
+          createdAt: string,
+          updatedAt: string,
+        } | null,
+        createdAt: string,
+        updatedAt: string,
+      } | null > | null,
+      nextToken: string | null,
+    } | null,
+    createdAt: string,
+    updatedAt: string,
+  } | null,
+};
+
+export type CreateCommentMutationVariables = {
+  input: CreateCommentInput,
+  condition?: ModelCommentConditionInput | null,
+};
+
+export type CreateCommentMutation = {
+  createComment:  {
+    __typename: "Comment",
+    id: string,
+    content: string | null,
+    post:  {
+      __typename: "Post",
+      id: string,
+      title: string,
+      blog:  {
+        __typename: "Blog",
+        id: string,
+        name: string,
+        posts:  {
+          __typename: "ModelPostConnection",
+          items:  Array< {
+            __typename: "Post",
+            id: string,
+            title: string,
+            createdAt: string,
+            updatedAt: string,
+          } | null > | null,
+          nextToken: string | null,
+        } | null,
+        createdAt: string,
+        updatedAt: string,
+      } | null,
+      comments:  {
+        __typename: "ModelCommentConnection",
+        items:  Array< {
+          __typename: "Comment",
+          id: string,
+          content: string | null,
+          post:  {
+            __typename: "Post",
+            id: string,
+            title: string,
+            createdAt: string,
+            updatedAt: string,
+          } | null,
+          createdAt: string,
+          updatedAt: string,
+        } | null > | null,
+        nextToken: string | null,
+      } | null,
+      createdAt: string,
+      updatedAt: string,
+    } | null,
+    createdAt: string,
+    updatedAt: string,
+  } | null,
+};
+
+export type UpdateCommentMutationVariables = {
+  input: UpdateCommentInput,
+  condition?: ModelCommentConditionInput | null,
+};
+
+export type UpdateCommentMutation = {
+  updateComment:  {
+    __typename: "Comment",
+    id: string,
+    content: string | null,
+    post:  {
+      __typename: "Post",
+      id: string,
+      title: string,
+      blog:  {
+        __typename: "Blog",
+        id: string,
+        name: string,
+        posts:  {
+          __typename: "ModelPostConnection",
+          items:  Array< {
+            __typename: "Post",
+            id: string,
+            title: string,
+            createdAt: string,
+            updatedAt: string,
+          } | null > | null,
+          nextToken: string | null,
+        } | null,
+        createdAt: string,
+        updatedAt: string,
+      } | null,
+      comments:  {
+        __typename: "ModelCommentConnection",
+        items:  Array< {
+          __typename: "Comment",
+          id: string,
+          content: string | null,
+          post:  {
+            __typename: "Post",
+            id: string,
+            title: string,
+            createdAt: string,
+            updatedAt: string,
+          } | null,
+          createdAt: string,
+          updatedAt: string,
+        } | null > | null,
+        nextToken: string | null,
+      } | null,
+      createdAt: string,
+      updatedAt: string,
+    } | null,
+    createdAt: string,
+    updatedAt: string,
+  } | null,
+};
+
+export type DeleteCommentMutationVariables = {
+  input: DeleteCommentInput,
+  condition?: ModelCommentConditionInput | null,
+};
+
+export type DeleteCommentMutation = {
+  deleteComment:  {
+    __typename: "Comment",
+    id: string,
+    content: string | null,
+    post:  {
+      __typename: "Post",
+      id: string,
+      title: string,
+      blog:  {
+        __typename: "Blog",
+        id: string,
+        name: string,
+        posts:  {
+          __typename: "ModelPostConnection",
+          items:  Array< {
+            __typename: "Post",
+            id: string,
+            title: string,
+            createdAt: string,
+            updatedAt: string,
+          } | null > | null,
+          nextToken: string | null,
+        } | null,
+        createdAt: string,
+        updatedAt: string,
+      } | null,
+      comments:  {
+        __typename: "ModelCommentConnection",
+        items:  Array< {
+          __typename: "Comment",
+          id: string,
+          content: string | null,
+          post:  {
+            __typename: "Post",
+            id: string,
+            title: string,
+            createdAt: string,
+            updatedAt: string,
+          } | null,
+          createdAt: string,
+          updatedAt: string,
+        } | null > | null,
+        nextToken: string | null,
+      } | null,
+      createdAt: string,
+      updatedAt: string,
+    } | null,
+    createdAt: string,
+    updatedAt: string,
+  } | null,
+};
+
+export type GetBlogQueryVariables = {
+  id: string,
+};
+
+export type GetBlogQuery = {
+  getBlog:  {
+    __typename: "Blog",
+    id: string,
+    name: string,
+    posts:  {
+      __typename: "ModelPostConnection",
+      items:  Array< {
+        __typename: "Post",
+        id: string,
+        title: string,
+        blog:  {
+          __typename: "Blog",
+          id: string,
+          name: string,
+          posts:  {
+            __typename: "ModelPostConnection",
+            nextToken: string | null,
+          } | null,
+          createdAt: string,
+          updatedAt: string,
+        } | null,
+        comments:  {
+          __typename: "ModelCommentConnection",
+          items:  Array< {
+            __typename: "Comment",
+            id: string,
+            content: string | null,
+            createdAt: string,
+            updatedAt: string,
+          } | null > | null,
+          nextToken: string | null,
+        } | null,
+        createdAt: string,
+        updatedAt: string,
+      } | null > | null,
+      nextToken: string | null,
+    } | null,
+    createdAt: string,
+    updatedAt: string,
+  } | null,
+};
+
+export type ListBlogsQueryVariables = {
+  filter?: ModelBlogFilterInput | null,
+  limit?: number | null,
+  nextToken?: string | null,
+};
+
+export type ListBlogsQuery = {
+  listBlogs:  {
+    __typename: "ModelBlogConnection",
+    items:  Array< {
+      __typename: "Blog",
+      id: string,
+      name: string,
+      posts:  {
+        __typename: "ModelPostConnection",
+        items:  Array< {
+          __typename: "Post",
+          id: string,
+          title: string,
+          blog:  {
+            __typename: "Blog",
+            id: string,
+            name: string,
+            createdAt: string,
+            updatedAt: string,
+          } | null,
+          comments:  {
+            __typename: "ModelCommentConnection",
+            nextToken: string | null,
+          } | null,
+          createdAt: string,
+          updatedAt: string,
+        } | null > | null,
+        nextToken: string | null,
+      } | null,
+      createdAt: string,
+      updatedAt: string,
     } | null > | null,
     nextToken: string | null,
   } | null,
 };
 
-export type OnCreateAlbumSubscriptionVariables = {
-  owner: string,
+export type GetPostQueryVariables = {
+  id: string,
 };
 
-export type OnCreateAlbumSubscription = {
-  onCreateAlbum:  {
-    __typename: "Album",
+export type GetPostQuery = {
+  getPost:  {
+    __typename: "Post",
     id: string,
-    owner: string,
-    ownerId: string,
-    name: string,
-    createdAt: string | null,
-    updatedAt: string | null,
-    photos:  {
-      __typename: "ModelPhotoConnection",
-      items:  Array< {
-        __typename: "Photo",
-        id: string,
-        createdAt: string | null,
-        updatedAt: string | null,
-        album:  {
-          __typename: "Album",
-          id: string,
-          owner: string,
-          ownerId: string,
-          name: string,
-          createdAt: string | null,
-          updatedAt: string | null,
-          photos:  {
-            __typename: "ModelPhotoConnection",
-            nextToken: string | null,
-          } | null,
-        } | null,
-        fullsize:  {
-          __typename: "S3Object",
-          region: string,
-          bucket: string,
-          key: string,
-        },
-        thumbnail:  {
-          __typename: "S3Object",
-          region: string,
-          bucket: string,
-          key: string,
-        } | null,
-        contentType: string | null,
-        gps:  {
-          __typename: "GPS",
-          latitude: string,
-          longitude: string,
-          altitude: number,
-        } | null,
-        height: number | null,
-        width: number | null,
-        size: number | null,
-        owner: string | null,
-      } | null > | null,
-      nextToken: string | null,
-    } | null,
-  } | null,
-};
-
-export type OnUpdateAlbumSubscriptionVariables = {
-  owner: string,
-};
-
-export type OnUpdateAlbumSubscription = {
-  onUpdateAlbum:  {
-    __typename: "Album",
-    id: string,
-    owner: string,
-    ownerId: string,
-    name: string,
-    createdAt: string | null,
-    updatedAt: string | null,
-    photos:  {
-      __typename: "ModelPhotoConnection",
-      items:  Array< {
-        __typename: "Photo",
-        id: string,
-        createdAt: string | null,
-        updatedAt: string | null,
-        album:  {
-          __typename: "Album",
-          id: string,
-          owner: string,
-          ownerId: string,
-          name: string,
-          createdAt: string | null,
-          updatedAt: string | null,
-          photos:  {
-            __typename: "ModelPhotoConnection",
-            nextToken: string | null,
-          } | null,
-        } | null,
-        fullsize:  {
-          __typename: "S3Object",
-          region: string,
-          bucket: string,
-          key: string,
-        },
-        thumbnail:  {
-          __typename: "S3Object",
-          region: string,
-          bucket: string,
-          key: string,
-        } | null,
-        contentType: string | null,
-        gps:  {
-          __typename: "GPS",
-          latitude: string,
-          longitude: string,
-          altitude: number,
-        } | null,
-        height: number | null,
-        width: number | null,
-        size: number | null,
-        owner: string | null,
-      } | null > | null,
-      nextToken: string | null,
-    } | null,
-  } | null,
-};
-
-export type OnDeleteAlbumSubscriptionVariables = {
-  owner: string,
-};
-
-export type OnDeleteAlbumSubscription = {
-  onDeleteAlbum:  {
-    __typename: "Album",
-    id: string,
-    owner: string,
-    ownerId: string,
-    name: string,
-    createdAt: string | null,
-    updatedAt: string | null,
-    photos:  {
-      __typename: "ModelPhotoConnection",
-      items:  Array< {
-        __typename: "Photo",
-        id: string,
-        createdAt: string | null,
-        updatedAt: string | null,
-        album:  {
-          __typename: "Album",
-          id: string,
-          owner: string,
-          ownerId: string,
-          name: string,
-          createdAt: string | null,
-          updatedAt: string | null,
-          photos:  {
-            __typename: "ModelPhotoConnection",
-            nextToken: string | null,
-          } | null,
-        } | null,
-        fullsize:  {
-          __typename: "S3Object",
-          region: string,
-          bucket: string,
-          key: string,
-        },
-        thumbnail:  {
-          __typename: "S3Object",
-          region: string,
-          bucket: string,
-          key: string,
-        } | null,
-        contentType: string | null,
-        gps:  {
-          __typename: "GPS",
-          latitude: string,
-          longitude: string,
-          altitude: number,
-        } | null,
-        height: number | null,
-        width: number | null,
-        size: number | null,
-        owner: string | null,
-      } | null > | null,
-      nextToken: string | null,
-    } | null,
-  } | null,
-};
-
-export type OnCreatePhotoSubscriptionVariables = {
-  owner?: string | null,
-};
-
-export type OnCreatePhotoSubscription = {
-  onCreatePhoto:  {
-    __typename: "Photo",
-    id: string,
-    createdAt: string | null,
-    updatedAt: string | null,
-    album:  {
-      __typename: "Album",
+    title: string,
+    blog:  {
+      __typename: "Blog",
       id: string,
-      owner: string,
-      ownerId: string,
       name: string,
-      createdAt: string | null,
-      updatedAt: string | null,
-      photos:  {
-        __typename: "ModelPhotoConnection",
+      posts:  {
+        __typename: "ModelPostConnection",
         items:  Array< {
-          __typename: "Photo",
+          __typename: "Post",
           id: string,
-          createdAt: string | null,
-          updatedAt: string | null,
-          album:  {
-            __typename: "Album",
+          title: string,
+          blog:  {
+            __typename: "Blog",
             id: string,
-            owner: string,
-            ownerId: string,
             name: string,
-            createdAt: string | null,
-            updatedAt: string | null,
+            createdAt: string,
+            updatedAt: string,
           } | null,
-          fullsize:  {
-            __typename: "S3Object",
-            region: string,
-            bucket: string,
-            key: string,
-          },
-          thumbnail:  {
-            __typename: "S3Object",
-            region: string,
-            bucket: string,
-            key: string,
+          comments:  {
+            __typename: "ModelCommentConnection",
+            nextToken: string | null,
           } | null,
-          contentType: string | null,
-          gps:  {
-            __typename: "GPS",
-            latitude: string,
-            longitude: string,
-            altitude: number,
-          } | null,
-          height: number | null,
-          width: number | null,
-          size: number | null,
-          owner: string | null,
+          createdAt: string,
+          updatedAt: string,
         } | null > | null,
         nextToken: string | null,
       } | null,
+      createdAt: string,
+      updatedAt: string,
     } | null,
-    fullsize:  {
-      __typename: "S3Object",
-      region: string,
-      bucket: string,
-      key: string,
-    },
-    thumbnail:  {
-      __typename: "S3Object",
-      region: string,
-      bucket: string,
-      key: string,
+    comments:  {
+      __typename: "ModelCommentConnection",
+      items:  Array< {
+        __typename: "Comment",
+        id: string,
+        content: string | null,
+        post:  {
+          __typename: "Post",
+          id: string,
+          title: string,
+          blog:  {
+            __typename: "Blog",
+            id: string,
+            name: string,
+            createdAt: string,
+            updatedAt: string,
+          } | null,
+          comments:  {
+            __typename: "ModelCommentConnection",
+            nextToken: string | null,
+          } | null,
+          createdAt: string,
+          updatedAt: string,
+        } | null,
+        createdAt: string,
+        updatedAt: string,
+      } | null > | null,
+      nextToken: string | null,
     } | null,
-    contentType: string | null,
-    gps:  {
-      __typename: "GPS",
-      latitude: string,
-      longitude: string,
-      altitude: number,
-    } | null,
-    height: number | null,
-    width: number | null,
-    size: number | null,
-    owner: string | null,
+    createdAt: string,
+    updatedAt: string,
   } | null,
 };
 
-export type OnUpdatePhotoSubscriptionVariables = {
-  owner?: string | null,
+export type ListPostsQueryVariables = {
+  filter?: ModelPostFilterInput | null,
+  limit?: number | null,
+  nextToken?: string | null,
 };
 
-export type OnUpdatePhotoSubscription = {
-  onUpdatePhoto:  {
-    __typename: "Photo",
-    id: string,
-    createdAt: string | null,
-    updatedAt: string | null,
-    album:  {
-      __typename: "Album",
+export type ListPostsQuery = {
+  listPosts:  {
+    __typename: "ModelPostConnection",
+    items:  Array< {
+      __typename: "Post",
       id: string,
-      owner: string,
-      ownerId: string,
-      name: string,
-      createdAt: string | null,
-      updatedAt: string | null,
-      photos:  {
-        __typename: "ModelPhotoConnection",
-        items:  Array< {
-          __typename: "Photo",
-          id: string,
-          createdAt: string | null,
-          updatedAt: string | null,
-          album:  {
-            __typename: "Album",
+      title: string,
+      blog:  {
+        __typename: "Blog",
+        id: string,
+        name: string,
+        posts:  {
+          __typename: "ModelPostConnection",
+          items:  Array< {
+            __typename: "Post",
             id: string,
-            owner: string,
-            ownerId: string,
-            name: string,
-            createdAt: string | null,
-            updatedAt: string | null,
+            title: string,
+            createdAt: string,
+            updatedAt: string,
+          } | null > | null,
+          nextToken: string | null,
+        } | null,
+        createdAt: string,
+        updatedAt: string,
+      } | null,
+      comments:  {
+        __typename: "ModelCommentConnection",
+        items:  Array< {
+          __typename: "Comment",
+          id: string,
+          content: string | null,
+          post:  {
+            __typename: "Post",
+            id: string,
+            title: string,
+            createdAt: string,
+            updatedAt: string,
           } | null,
-          fullsize:  {
-            __typename: "S3Object",
-            region: string,
-            bucket: string,
-            key: string,
-          },
-          thumbnail:  {
-            __typename: "S3Object",
-            region: string,
-            bucket: string,
-            key: string,
-          } | null,
-          contentType: string | null,
-          gps:  {
-            __typename: "GPS",
-            latitude: string,
-            longitude: string,
-            altitude: number,
-          } | null,
-          height: number | null,
-          width: number | null,
-          size: number | null,
-          owner: string | null,
+          createdAt: string,
+          updatedAt: string,
         } | null > | null,
         nextToken: string | null,
       } | null,
-    } | null,
-    fullsize:  {
-      __typename: "S3Object",
-      region: string,
-      bucket: string,
-      key: string,
-    },
-    thumbnail:  {
-      __typename: "S3Object",
-      region: string,
-      bucket: string,
-      key: string,
-    } | null,
-    contentType: string | null,
-    gps:  {
-      __typename: "GPS",
-      latitude: string,
-      longitude: string,
-      altitude: number,
-    } | null,
-    height: number | null,
-    width: number | null,
-    size: number | null,
-    owner: string | null,
+      createdAt: string,
+      updatedAt: string,
+    } | null > | null,
+    nextToken: string | null,
   } | null,
 };
 
-export type OnDeletePhotoSubscriptionVariables = {
-  owner?: string | null,
+export type GetCommentQueryVariables = {
+  id: string,
 };
 
-export type OnDeletePhotoSubscription = {
-  onDeletePhoto:  {
-    __typename: "Photo",
+export type GetCommentQuery = {
+  getComment:  {
+    __typename: "Comment",
     id: string,
-    createdAt: string | null,
-    updatedAt: string | null,
-    album:  {
-      __typename: "Album",
+    content: string | null,
+    post:  {
+      __typename: "Post",
       id: string,
-      owner: string,
-      ownerId: string,
-      name: string,
-      createdAt: string | null,
-      updatedAt: string | null,
-      photos:  {
-        __typename: "ModelPhotoConnection",
-        items:  Array< {
-          __typename: "Photo",
-          id: string,
-          createdAt: string | null,
-          updatedAt: string | null,
-          album:  {
-            __typename: "Album",
+      title: string,
+      blog:  {
+        __typename: "Blog",
+        id: string,
+        name: string,
+        posts:  {
+          __typename: "ModelPostConnection",
+          items:  Array< {
+            __typename: "Post",
             id: string,
-            owner: string,
-            ownerId: string,
-            name: string,
-            createdAt: string | null,
-            updatedAt: string | null,
+            title: string,
+            createdAt: string,
+            updatedAt: string,
+          } | null > | null,
+          nextToken: string | null,
+        } | null,
+        createdAt: string,
+        updatedAt: string,
+      } | null,
+      comments:  {
+        __typename: "ModelCommentConnection",
+        items:  Array< {
+          __typename: "Comment",
+          id: string,
+          content: string | null,
+          post:  {
+            __typename: "Post",
+            id: string,
+            title: string,
+            createdAt: string,
+            updatedAt: string,
           } | null,
-          fullsize:  {
-            __typename: "S3Object",
-            region: string,
-            bucket: string,
-            key: string,
-          },
-          thumbnail:  {
-            __typename: "S3Object",
-            region: string,
-            bucket: string,
-            key: string,
-          } | null,
-          contentType: string | null,
-          gps:  {
-            __typename: "GPS",
-            latitude: string,
-            longitude: string,
-            altitude: number,
-          } | null,
-          height: number | null,
-          width: number | null,
-          size: number | null,
-          owner: string | null,
+          createdAt: string,
+          updatedAt: string,
         } | null > | null,
         nextToken: string | null,
       } | null,
+      createdAt: string,
+      updatedAt: string,
     } | null,
-    fullsize:  {
-      __typename: "S3Object",
-      region: string,
-      bucket: string,
-      key: string,
-    },
-    thumbnail:  {
-      __typename: "S3Object",
-      region: string,
-      bucket: string,
-      key: string,
+    createdAt: string,
+    updatedAt: string,
+  } | null,
+};
+
+export type ListCommentsQueryVariables = {
+  filter?: ModelCommentFilterInput | null,
+  limit?: number | null,
+  nextToken?: string | null,
+};
+
+export type ListCommentsQuery = {
+  listComments:  {
+    __typename: "ModelCommentConnection",
+    items:  Array< {
+      __typename: "Comment",
+      id: string,
+      content: string | null,
+      post:  {
+        __typename: "Post",
+        id: string,
+        title: string,
+        blog:  {
+          __typename: "Blog",
+          id: string,
+          name: string,
+          posts:  {
+            __typename: "ModelPostConnection",
+            nextToken: string | null,
+          } | null,
+          createdAt: string,
+          updatedAt: string,
+        } | null,
+        comments:  {
+          __typename: "ModelCommentConnection",
+          items:  Array< {
+            __typename: "Comment",
+            id: string,
+            content: string | null,
+            createdAt: string,
+            updatedAt: string,
+          } | null > | null,
+          nextToken: string | null,
+        } | null,
+        createdAt: string,
+        updatedAt: string,
+      } | null,
+      createdAt: string,
+      updatedAt: string,
+    } | null > | null,
+    nextToken: string | null,
+  } | null,
+};
+
+export type OnCreateBlogSubscription = {
+  onCreateBlog:  {
+    __typename: "Blog",
+    id: string,
+    name: string,
+    posts:  {
+      __typename: "ModelPostConnection",
+      items:  Array< {
+        __typename: "Post",
+        id: string,
+        title: string,
+        blog:  {
+          __typename: "Blog",
+          id: string,
+          name: string,
+          posts:  {
+            __typename: "ModelPostConnection",
+            nextToken: string | null,
+          } | null,
+          createdAt: string,
+          updatedAt: string,
+        } | null,
+        comments:  {
+          __typename: "ModelCommentConnection",
+          items:  Array< {
+            __typename: "Comment",
+            id: string,
+            content: string | null,
+            createdAt: string,
+            updatedAt: string,
+          } | null > | null,
+          nextToken: string | null,
+        } | null,
+        createdAt: string,
+        updatedAt: string,
+      } | null > | null,
+      nextToken: string | null,
     } | null,
-    contentType: string | null,
-    gps:  {
-      __typename: "GPS",
-      latitude: string,
-      longitude: string,
-      altitude: number,
+    createdAt: string,
+    updatedAt: string,
+  } | null,
+};
+
+export type OnUpdateBlogSubscription = {
+  onUpdateBlog:  {
+    __typename: "Blog",
+    id: string,
+    name: string,
+    posts:  {
+      __typename: "ModelPostConnection",
+      items:  Array< {
+        __typename: "Post",
+        id: string,
+        title: string,
+        blog:  {
+          __typename: "Blog",
+          id: string,
+          name: string,
+          posts:  {
+            __typename: "ModelPostConnection",
+            nextToken: string | null,
+          } | null,
+          createdAt: string,
+          updatedAt: string,
+        } | null,
+        comments:  {
+          __typename: "ModelCommentConnection",
+          items:  Array< {
+            __typename: "Comment",
+            id: string,
+            content: string | null,
+            createdAt: string,
+            updatedAt: string,
+          } | null > | null,
+          nextToken: string | null,
+        } | null,
+        createdAt: string,
+        updatedAt: string,
+      } | null > | null,
+      nextToken: string | null,
     } | null,
-    height: number | null,
-    width: number | null,
-    size: number | null,
-    owner: string | null,
+    createdAt: string,
+    updatedAt: string,
+  } | null,
+};
+
+export type OnDeleteBlogSubscription = {
+  onDeleteBlog:  {
+    __typename: "Blog",
+    id: string,
+    name: string,
+    posts:  {
+      __typename: "ModelPostConnection",
+      items:  Array< {
+        __typename: "Post",
+        id: string,
+        title: string,
+        blog:  {
+          __typename: "Blog",
+          id: string,
+          name: string,
+          posts:  {
+            __typename: "ModelPostConnection",
+            nextToken: string | null,
+          } | null,
+          createdAt: string,
+          updatedAt: string,
+        } | null,
+        comments:  {
+          __typename: "ModelCommentConnection",
+          items:  Array< {
+            __typename: "Comment",
+            id: string,
+            content: string | null,
+            createdAt: string,
+            updatedAt: string,
+          } | null > | null,
+          nextToken: string | null,
+        } | null,
+        createdAt: string,
+        updatedAt: string,
+      } | null > | null,
+      nextToken: string | null,
+    } | null,
+    createdAt: string,
+    updatedAt: string,
+  } | null,
+};
+
+export type OnCreatePostSubscription = {
+  onCreatePost:  {
+    __typename: "Post",
+    id: string,
+    title: string,
+    blog:  {
+      __typename: "Blog",
+      id: string,
+      name: string,
+      posts:  {
+        __typename: "ModelPostConnection",
+        items:  Array< {
+          __typename: "Post",
+          id: string,
+          title: string,
+          blog:  {
+            __typename: "Blog",
+            id: string,
+            name: string,
+            createdAt: string,
+            updatedAt: string,
+          } | null,
+          comments:  {
+            __typename: "ModelCommentConnection",
+            nextToken: string | null,
+          } | null,
+          createdAt: string,
+          updatedAt: string,
+        } | null > | null,
+        nextToken: string | null,
+      } | null,
+      createdAt: string,
+      updatedAt: string,
+    } | null,
+    comments:  {
+      __typename: "ModelCommentConnection",
+      items:  Array< {
+        __typename: "Comment",
+        id: string,
+        content: string | null,
+        post:  {
+          __typename: "Post",
+          id: string,
+          title: string,
+          blog:  {
+            __typename: "Blog",
+            id: string,
+            name: string,
+            createdAt: string,
+            updatedAt: string,
+          } | null,
+          comments:  {
+            __typename: "ModelCommentConnection",
+            nextToken: string | null,
+          } | null,
+          createdAt: string,
+          updatedAt: string,
+        } | null,
+        createdAt: string,
+        updatedAt: string,
+      } | null > | null,
+      nextToken: string | null,
+    } | null,
+    createdAt: string,
+    updatedAt: string,
+  } | null,
+};
+
+export type OnUpdatePostSubscription = {
+  onUpdatePost:  {
+    __typename: "Post",
+    id: string,
+    title: string,
+    blog:  {
+      __typename: "Blog",
+      id: string,
+      name: string,
+      posts:  {
+        __typename: "ModelPostConnection",
+        items:  Array< {
+          __typename: "Post",
+          id: string,
+          title: string,
+          blog:  {
+            __typename: "Blog",
+            id: string,
+            name: string,
+            createdAt: string,
+            updatedAt: string,
+          } | null,
+          comments:  {
+            __typename: "ModelCommentConnection",
+            nextToken: string | null,
+          } | null,
+          createdAt: string,
+          updatedAt: string,
+        } | null > | null,
+        nextToken: string | null,
+      } | null,
+      createdAt: string,
+      updatedAt: string,
+    } | null,
+    comments:  {
+      __typename: "ModelCommentConnection",
+      items:  Array< {
+        __typename: "Comment",
+        id: string,
+        content: string | null,
+        post:  {
+          __typename: "Post",
+          id: string,
+          title: string,
+          blog:  {
+            __typename: "Blog",
+            id: string,
+            name: string,
+            createdAt: string,
+            updatedAt: string,
+          } | null,
+          comments:  {
+            __typename: "ModelCommentConnection",
+            nextToken: string | null,
+          } | null,
+          createdAt: string,
+          updatedAt: string,
+        } | null,
+        createdAt: string,
+        updatedAt: string,
+      } | null > | null,
+      nextToken: string | null,
+    } | null,
+    createdAt: string,
+    updatedAt: string,
+  } | null,
+};
+
+export type OnDeletePostSubscription = {
+  onDeletePost:  {
+    __typename: "Post",
+    id: string,
+    title: string,
+    blog:  {
+      __typename: "Blog",
+      id: string,
+      name: string,
+      posts:  {
+        __typename: "ModelPostConnection",
+        items:  Array< {
+          __typename: "Post",
+          id: string,
+          title: string,
+          blog:  {
+            __typename: "Blog",
+            id: string,
+            name: string,
+            createdAt: string,
+            updatedAt: string,
+          } | null,
+          comments:  {
+            __typename: "ModelCommentConnection",
+            nextToken: string | null,
+          } | null,
+          createdAt: string,
+          updatedAt: string,
+        } | null > | null,
+        nextToken: string | null,
+      } | null,
+      createdAt: string,
+      updatedAt: string,
+    } | null,
+    comments:  {
+      __typename: "ModelCommentConnection",
+      items:  Array< {
+        __typename: "Comment",
+        id: string,
+        content: string | null,
+        post:  {
+          __typename: "Post",
+          id: string,
+          title: string,
+          blog:  {
+            __typename: "Blog",
+            id: string,
+            name: string,
+            createdAt: string,
+            updatedAt: string,
+          } | null,
+          comments:  {
+            __typename: "ModelCommentConnection",
+            nextToken: string | null,
+          } | null,
+          createdAt: string,
+          updatedAt: string,
+        } | null,
+        createdAt: string,
+        updatedAt: string,
+      } | null > | null,
+      nextToken: string | null,
+    } | null,
+    createdAt: string,
+    updatedAt: string,
+  } | null,
+};
+
+export type OnCreateCommentSubscription = {
+  onCreateComment:  {
+    __typename: "Comment",
+    id: string,
+    content: string | null,
+    post:  {
+      __typename: "Post",
+      id: string,
+      title: string,
+      blog:  {
+        __typename: "Blog",
+        id: string,
+        name: string,
+        posts:  {
+          __typename: "ModelPostConnection",
+          items:  Array< {
+            __typename: "Post",
+            id: string,
+            title: string,
+            createdAt: string,
+            updatedAt: string,
+          } | null > | null,
+          nextToken: string | null,
+        } | null,
+        createdAt: string,
+        updatedAt: string,
+      } | null,
+      comments:  {
+        __typename: "ModelCommentConnection",
+        items:  Array< {
+          __typename: "Comment",
+          id: string,
+          content: string | null,
+          post:  {
+            __typename: "Post",
+            id: string,
+            title: string,
+            createdAt: string,
+            updatedAt: string,
+          } | null,
+          createdAt: string,
+          updatedAt: string,
+        } | null > | null,
+        nextToken: string | null,
+      } | null,
+      createdAt: string,
+      updatedAt: string,
+    } | null,
+    createdAt: string,
+    updatedAt: string,
+  } | null,
+};
+
+export type OnUpdateCommentSubscription = {
+  onUpdateComment:  {
+    __typename: "Comment",
+    id: string,
+    content: string | null,
+    post:  {
+      __typename: "Post",
+      id: string,
+      title: string,
+      blog:  {
+        __typename: "Blog",
+        id: string,
+        name: string,
+        posts:  {
+          __typename: "ModelPostConnection",
+          items:  Array< {
+            __typename: "Post",
+            id: string,
+            title: string,
+            createdAt: string,
+            updatedAt: string,
+          } | null > | null,
+          nextToken: string | null,
+        } | null,
+        createdAt: string,
+        updatedAt: string,
+      } | null,
+      comments:  {
+        __typename: "ModelCommentConnection",
+        items:  Array< {
+          __typename: "Comment",
+          id: string,
+          content: string | null,
+          post:  {
+            __typename: "Post",
+            id: string,
+            title: string,
+            createdAt: string,
+            updatedAt: string,
+          } | null,
+          createdAt: string,
+          updatedAt: string,
+        } | null > | null,
+        nextToken: string | null,
+      } | null,
+      createdAt: string,
+      updatedAt: string,
+    } | null,
+    createdAt: string,
+    updatedAt: string,
+  } | null,
+};
+
+export type OnDeleteCommentSubscription = {
+  onDeleteComment:  {
+    __typename: "Comment",
+    id: string,
+    content: string | null,
+    post:  {
+      __typename: "Post",
+      id: string,
+      title: string,
+      blog:  {
+        __typename: "Blog",
+        id: string,
+        name: string,
+        posts:  {
+          __typename: "ModelPostConnection",
+          items:  Array< {
+            __typename: "Post",
+            id: string,
+            title: string,
+            createdAt: string,
+            updatedAt: string,
+          } | null > | null,
+          nextToken: string | null,
+        } | null,
+        createdAt: string,
+        updatedAt: string,
+      } | null,
+      comments:  {
+        __typename: "ModelCommentConnection",
+        items:  Array< {
+          __typename: "Comment",
+          id: string,
+          content: string | null,
+          post:  {
+            __typename: "Post",
+            id: string,
+            title: string,
+            createdAt: string,
+            updatedAt: string,
+          } | null,
+          createdAt: string,
+          updatedAt: string,
+        } | null > | null,
+        nextToken: string | null,
+      } | null,
+      createdAt: string,
+      updatedAt: string,
+    } | null,
+    createdAt: string,
+    updatedAt: string,
   } | null,
 };

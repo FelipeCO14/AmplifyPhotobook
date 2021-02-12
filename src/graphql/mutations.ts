@@ -2,393 +2,453 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const createAlbum = /* GraphQL */ `
-  mutation CreateAlbum(
-    $input: CreateAlbumInput!
-    $condition: ModelAlbumConditionInput
+export const createBlog = /* GraphQL */ `
+  mutation CreateBlog(
+    $input: CreateBlogInput!
+    $condition: ModelBlogConditionInput
   ) {
-    createAlbum(input: $input, condition: $condition) {
+    createBlog(input: $input, condition: $condition) {
       id
-      owner
-      ownerId
       name
-      createdAt
-      updatedAt
-      photos {
+      posts {
         items {
           id
-          createdAt
-          updatedAt
-          album {
+          title
+          blog {
             id
-            owner
-            ownerId
             name
-            createdAt
-            updatedAt
-            photos {
+            posts {
               nextToken
             }
+            createdAt
+            updatedAt
           }
-          fullsize {
-            region
-            bucket
-            key
+          comments {
+            items {
+              id
+              content
+              createdAt
+              updatedAt
+            }
+            nextToken
           }
-          thumbnail {
-            region
-            bucket
-            key
-          }
-          contentType
-          gps {
-            latitude
-            longitude
-            altitude
-          }
-          height
-          width
-          size
-          owner
+          createdAt
+          updatedAt
         }
         nextToken
       }
+      createdAt
+      updatedAt
     }
   }
 `;
-export const updateAlbum = /* GraphQL */ `
-  mutation UpdateAlbum(
-    $input: UpdateAlbumInput!
-    $condition: ModelAlbumConditionInput
+export const updateBlog = /* GraphQL */ `
+  mutation UpdateBlog(
+    $input: UpdateBlogInput!
+    $condition: ModelBlogConditionInput
   ) {
-    updateAlbum(input: $input, condition: $condition) {
+    updateBlog(input: $input, condition: $condition) {
       id
-      owner
-      ownerId
       name
-      createdAt
-      updatedAt
-      photos {
+      posts {
         items {
           id
-          createdAt
-          updatedAt
-          album {
+          title
+          blog {
             id
-            owner
-            ownerId
             name
-            createdAt
-            updatedAt
-            photos {
+            posts {
               nextToken
             }
+            createdAt
+            updatedAt
           }
-          fullsize {
-            region
-            bucket
-            key
+          comments {
+            items {
+              id
+              content
+              createdAt
+              updatedAt
+            }
+            nextToken
           }
-          thumbnail {
-            region
-            bucket
-            key
-          }
-          contentType
-          gps {
-            latitude
-            longitude
-            altitude
-          }
-          height
-          width
-          size
-          owner
+          createdAt
+          updatedAt
         }
         nextToken
       }
+      createdAt
+      updatedAt
     }
   }
 `;
-export const deleteAlbum = /* GraphQL */ `
-  mutation DeleteAlbum(
-    $input: DeleteAlbumInput!
-    $condition: ModelAlbumConditionInput
+export const deleteBlog = /* GraphQL */ `
+  mutation DeleteBlog(
+    $input: DeleteBlogInput!
+    $condition: ModelBlogConditionInput
   ) {
-    deleteAlbum(input: $input, condition: $condition) {
+    deleteBlog(input: $input, condition: $condition) {
       id
-      owner
-      ownerId
       name
-      createdAt
-      updatedAt
-      photos {
+      posts {
         items {
           id
-          createdAt
-          updatedAt
-          album {
+          title
+          blog {
             id
-            owner
-            ownerId
             name
-            createdAt
-            updatedAt
-            photos {
+            posts {
               nextToken
             }
+            createdAt
+            updatedAt
           }
-          fullsize {
-            region
-            bucket
-            key
+          comments {
+            items {
+              id
+              content
+              createdAt
+              updatedAt
+            }
+            nextToken
           }
-          thumbnail {
-            region
-            bucket
-            key
-          }
-          contentType
-          gps {
-            latitude
-            longitude
-            altitude
-          }
-          height
-          width
-          size
-          owner
+          createdAt
+          updatedAt
         }
         nextToken
       }
+      createdAt
+      updatedAt
     }
   }
 `;
-export const createPhoto = /* GraphQL */ `
-  mutation CreatePhoto(
-    $input: CreatePhotoInput!
-    $condition: ModelPhotoConditionInput
+export const createPost = /* GraphQL */ `
+  mutation CreatePost(
+    $input: CreatePostInput!
+    $condition: ModelPostConditionInput
   ) {
-    createPhoto(input: $input, condition: $condition) {
+    createPost(input: $input, condition: $condition) {
       id
-      createdAt
-      updatedAt
-      album {
+      title
+      blog {
         id
-        owner
-        ownerId
         name
-        createdAt
-        updatedAt
-        photos {
+        posts {
           items {
             id
-            createdAt
-            updatedAt
-            album {
+            title
+            blog {
               id
-              owner
-              ownerId
               name
               createdAt
               updatedAt
             }
-            fullsize {
-              region
-              bucket
-              key
+            comments {
+              nextToken
             }
-            thumbnail {
-              region
-              bucket
-              key
-            }
-            contentType
-            gps {
-              latitude
-              longitude
-              altitude
-            }
-            height
-            width
-            size
-            owner
+            createdAt
+            updatedAt
           }
           nextToken
         }
-      }
-      fullsize {
-        region
-        bucket
-        key
-      }
-      thumbnail {
-        region
-        bucket
-        key
-      }
-      contentType
-      gps {
-        latitude
-        longitude
-        altitude
-      }
-      height
-      width
-      size
-      owner
-    }
-  }
-`;
-export const deletePhoto = /* GraphQL */ `
-  mutation DeletePhoto(
-    $input: DeletePhotoInput!
-    $condition: ModelPhotoConditionInput
-  ) {
-    deletePhoto(input: $input, condition: $condition) {
-      id
-      createdAt
-      updatedAt
-      album {
-        id
-        owner
-        ownerId
-        name
         createdAt
         updatedAt
-        photos {
-          items {
+      }
+      comments {
+        items {
+          id
+          content
+          post {
             id
-            createdAt
-            updatedAt
-            album {
+            title
+            blog {
               id
-              owner
-              ownerId
               name
               createdAt
               updatedAt
             }
-            fullsize {
-              region
-              bucket
-              key
+            comments {
+              nextToken
             }
-            thumbnail {
-              region
-              bucket
-              key
-            }
-            contentType
-            gps {
-              latitude
-              longitude
-              altitude
-            }
-            height
-            width
-            size
-            owner
+            createdAt
+            updatedAt
           }
-          nextToken
+          createdAt
+          updatedAt
         }
+        nextToken
       }
-      fullsize {
-        region
-        bucket
-        key
-      }
-      thumbnail {
-        region
-        bucket
-        key
-      }
-      contentType
-      gps {
-        latitude
-        longitude
-        altitude
-      }
-      height
-      width
-      size
-      owner
+      createdAt
+      updatedAt
     }
   }
 `;
-export const updatePhoto = /* GraphQL */ `
-  mutation UpdatePhoto(
-    $input: UpdatePhotoInput!
-    $condition: ModelPhotoConditionInput
+export const updatePost = /* GraphQL */ `
+  mutation UpdatePost(
+    $input: UpdatePostInput!
+    $condition: ModelPostConditionInput
   ) {
-    updatePhoto(input: $input, condition: $condition) {
+    updatePost(input: $input, condition: $condition) {
       id
-      createdAt
-      updatedAt
-      album {
+      title
+      blog {
         id
-        owner
-        ownerId
         name
-        createdAt
-        updatedAt
-        photos {
+        posts {
           items {
             id
-            createdAt
-            updatedAt
-            album {
+            title
+            blog {
               id
-              owner
-              ownerId
               name
               createdAt
               updatedAt
             }
-            fullsize {
-              region
-              bucket
-              key
+            comments {
+              nextToken
             }
-            thumbnail {
-              region
-              bucket
-              key
-            }
-            contentType
-            gps {
-              latitude
-              longitude
-              altitude
-            }
-            height
-            width
-            size
-            owner
+            createdAt
+            updatedAt
           }
           nextToken
         }
+        createdAt
+        updatedAt
       }
-      fullsize {
-        region
-        bucket
-        key
+      comments {
+        items {
+          id
+          content
+          post {
+            id
+            title
+            blog {
+              id
+              name
+              createdAt
+              updatedAt
+            }
+            comments {
+              nextToken
+            }
+            createdAt
+            updatedAt
+          }
+          createdAt
+          updatedAt
+        }
+        nextToken
       }
-      thumbnail {
-        region
-        bucket
-        key
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const deletePost = /* GraphQL */ `
+  mutation DeletePost(
+    $input: DeletePostInput!
+    $condition: ModelPostConditionInput
+  ) {
+    deletePost(input: $input, condition: $condition) {
+      id
+      title
+      blog {
+        id
+        name
+        posts {
+          items {
+            id
+            title
+            blog {
+              id
+              name
+              createdAt
+              updatedAt
+            }
+            comments {
+              nextToken
+            }
+            createdAt
+            updatedAt
+          }
+          nextToken
+        }
+        createdAt
+        updatedAt
       }
-      contentType
-      gps {
-        latitude
-        longitude
-        altitude
+      comments {
+        items {
+          id
+          content
+          post {
+            id
+            title
+            blog {
+              id
+              name
+              createdAt
+              updatedAt
+            }
+            comments {
+              nextToken
+            }
+            createdAt
+            updatedAt
+          }
+          createdAt
+          updatedAt
+        }
+        nextToken
       }
-      height
-      width
-      size
-      owner
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const createComment = /* GraphQL */ `
+  mutation CreateComment(
+    $input: CreateCommentInput!
+    $condition: ModelCommentConditionInput
+  ) {
+    createComment(input: $input, condition: $condition) {
+      id
+      content
+      post {
+        id
+        title
+        blog {
+          id
+          name
+          posts {
+            items {
+              id
+              title
+              createdAt
+              updatedAt
+            }
+            nextToken
+          }
+          createdAt
+          updatedAt
+        }
+        comments {
+          items {
+            id
+            content
+            post {
+              id
+              title
+              createdAt
+              updatedAt
+            }
+            createdAt
+            updatedAt
+          }
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const updateComment = /* GraphQL */ `
+  mutation UpdateComment(
+    $input: UpdateCommentInput!
+    $condition: ModelCommentConditionInput
+  ) {
+    updateComment(input: $input, condition: $condition) {
+      id
+      content
+      post {
+        id
+        title
+        blog {
+          id
+          name
+          posts {
+            items {
+              id
+              title
+              createdAt
+              updatedAt
+            }
+            nextToken
+          }
+          createdAt
+          updatedAt
+        }
+        comments {
+          items {
+            id
+            content
+            post {
+              id
+              title
+              createdAt
+              updatedAt
+            }
+            createdAt
+            updatedAt
+          }
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const deleteComment = /* GraphQL */ `
+  mutation DeleteComment(
+    $input: DeleteCommentInput!
+    $condition: ModelCommentConditionInput
+  ) {
+    deleteComment(input: $input, condition: $condition) {
+      id
+      content
+      post {
+        id
+        title
+        blog {
+          id
+          name
+          posts {
+            items {
+              id
+              title
+              createdAt
+              updatedAt
+            }
+            nextToken
+          }
+          createdAt
+          updatedAt
+        }
+        comments {
+          items {
+            id
+            content
+            post {
+              id
+              title
+              createdAt
+              updatedAt
+            }
+            createdAt
+            updatedAt
+          }
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
     }
   }
 `;

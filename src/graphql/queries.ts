@@ -2,214 +2,265 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const getAlbum = /* GraphQL */ `
-  query GetAlbum($id: ID!) {
-    getAlbum(id: $id) {
+export const getBlog = /* GraphQL */ `
+  query GetBlog($id: ID!) {
+    getBlog(id: $id) {
       id
-      owner
-      ownerId
       name
-      createdAt
-      photos {
+      posts {
         items {
           id
+          title
+          blog {
+            id
+            name
+            posts {
+              nextToken
+            }
+            createdAt
+            updatedAt
+          }
+          comments {
+            items {
+              id
+              content
+              createdAt
+              updatedAt
+            }
+            nextToken
+          }
           createdAt
-          thumbnail {
-            key
-          }
-          fullsize {
-            key
-          }
-          gps {
-            latitude
-            longitude
-          }
+          updatedAt
         }
         nextToken
       }
+      createdAt
+      updatedAt
     }
   }
 `;
-export const listAlbums = /* GraphQL */ `
-  query ListAlbums(
-    $filter: ModelAlbumFilterInput
+export const listBlogs = /* GraphQL */ `
+  query ListBlogs(
+    $filter: ModelBlogFilterInput
     $limit: Int
     $nextToken: String
   ) {
-    listAlbums(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    listBlogs(filter: $filter, limit: $limit, nextToken: $nextToken) {
       items {
         id
-        owner
-        ownerId
         name
-        createdAt
-        updatedAt
-        photos {
+        posts {
           items {
             id
-            createdAt
-            updatedAt
-            album {
+            title
+            blog {
               id
-              owner
-              ownerId
               name
               createdAt
               updatedAt
             }
-            fullsize {
-              region
-              bucket
-              key
+            comments {
+              nextToken
             }
-            thumbnail {
-              region
-              bucket
-              key
-            }
-            contentType
-            gps {
-              latitude
-              longitude
-              altitude
-            }
-            height
-            width
-            size
-            owner
+            createdAt
+            updatedAt
           }
           nextToken
         }
+        createdAt
+        updatedAt
       }
       nextToken
     }
   }
 `;
-export const getPhoto = /* GraphQL */ `
-  query GetPhoto($id: ID!) {
-    getPhoto(id: $id) {
+export const getPost = /* GraphQL */ `
+  query GetPost($id: ID!) {
+    getPost(id: $id) {
       id
-      createdAt
-      updatedAt
-      album {
+      title
+      blog {
         id
-        owner
-        ownerId
         name
-        createdAt
-        updatedAt
-        photos {
+        posts {
           items {
             id
-            createdAt
-            updatedAt
-            album {
+            title
+            blog {
               id
-              owner
-              ownerId
               name
               createdAt
               updatedAt
             }
-            fullsize {
-              region
-              bucket
-              key
+            comments {
+              nextToken
             }
-            thumbnail {
-              region
-              bucket
-              key
-            }
-            contentType
-            gps {
-              latitude
-              longitude
-              altitude
-            }
-            height
-            width
-            size
-            owner
+            createdAt
+            updatedAt
           }
           nextToken
         }
+        createdAt
+        updatedAt
       }
-      fullsize {
-        region
-        bucket
-        key
+      comments {
+        items {
+          id
+          content
+          post {
+            id
+            title
+            blog {
+              id
+              name
+              createdAt
+              updatedAt
+            }
+            comments {
+              nextToken
+            }
+            createdAt
+            updatedAt
+          }
+          createdAt
+          updatedAt
+        }
+        nextToken
       }
-      thumbnail {
-        region
-        bucket
-        key
-      }
-      contentType
-      gps {
-        latitude
-        longitude
-        altitude
-      }
-      height
-      width
-      size
-      owner
+      createdAt
+      updatedAt
     }
   }
 `;
-export const listPhotos = /* GraphQL */ `
-  query ListPhotos(
-    $filter: ModelPhotoFilterInput
+export const listPosts = /* GraphQL */ `
+  query ListPosts(
+    $filter: ModelPostFilterInput
     $limit: Int
     $nextToken: String
   ) {
-    listPhotos(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    listPosts(filter: $filter, limit: $limit, nextToken: $nextToken) {
       items {
         id
-        createdAt
-        updatedAt
-        album {
+        title
+        blog {
           id
-          owner
-          ownerId
           name
-          createdAt
-          updatedAt
-          photos {
+          posts {
             items {
               id
+              title
               createdAt
               updatedAt
-              contentType
-              height
-              width
-              size
-              owner
             }
             nextToken
           }
+          createdAt
+          updatedAt
         }
-        fullsize {
-          region
-          bucket
-          key
+        comments {
+          items {
+            id
+            content
+            post {
+              id
+              title
+              createdAt
+              updatedAt
+            }
+            createdAt
+            updatedAt
+          }
+          nextToken
         }
-        thumbnail {
-          region
-          bucket
-          key
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+  }
+`;
+export const getComment = /* GraphQL */ `
+  query GetComment($id: ID!) {
+    getComment(id: $id) {
+      id
+      content
+      post {
+        id
+        title
+        blog {
+          id
+          name
+          posts {
+            items {
+              id
+              title
+              createdAt
+              updatedAt
+            }
+            nextToken
+          }
+          createdAt
+          updatedAt
         }
-        contentType
-        gps {
-          latitude
-          longitude
-          altitude
+        comments {
+          items {
+            id
+            content
+            post {
+              id
+              title
+              createdAt
+              updatedAt
+            }
+            createdAt
+            updatedAt
+          }
+          nextToken
         }
-        height
-        width
-        size
-        owner
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const listComments = /* GraphQL */ `
+  query ListComments(
+    $filter: ModelCommentFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listComments(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        content
+        post {
+          id
+          title
+          blog {
+            id
+            name
+            posts {
+              nextToken
+            }
+            createdAt
+            updatedAt
+          }
+          comments {
+            items {
+              id
+              content
+              createdAt
+              updatedAt
+            }
+            nextToken
+          }
+          createdAt
+          updatedAt
+        }
+        createdAt
+        updatedAt
       }
       nextToken
     }

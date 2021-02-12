@@ -1,6 +1,6 @@
 {
     "identityPoolName": "amplifyphotobook299ebe19_identitypool_299ebe19",
-    "allowUnauthenticatedIdentities": false,
+    "allowUnauthenticatedIdentities": true,
     "resourceNameTruncated": "amplif299ebe19",
     "userPoolName": "amplifyphotobook299ebe19_userpool_299ebe19",
     "autoVerifiedAttributes": [
